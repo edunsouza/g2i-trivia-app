@@ -29,5 +29,6 @@ module.exports = {
 		"no-extra-parens": ["error", "all"],
 		"default-case": "error",
 		"comma-dangle": ["error", "never"],
+		"react/prop-types": "off"
 	}
 };
