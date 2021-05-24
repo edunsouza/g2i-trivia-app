@@ -5,10 +5,9 @@ client/node_modules
 client/build
 
 # misc
+.vscode/
 .DS_Store
 client/.DS_Store
-client/.env.development
-client/.env.production
 
 # logs
 client/npm-debug.log*
