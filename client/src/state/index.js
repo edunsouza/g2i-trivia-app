@@ -1,15 +1,15 @@
 import { createStore, combineReducers } from 'redux';
 
-import navigation from './reducers/navigation';
-import settings from './reducers/settings';
-import questions from './reducers/questions';
+import reducers from './reducers';
+import actions from './actions';
 
-const reducers = combineReducers({ navigation, settings, questions });
-
-const session = window.sessionStorage.getItem('quiz-state');
+const session = window.sessionStorage.getItem('trivia');
 const initialState = session ? JSON.parse(session) : {
-	questions: [],
-	navigation: { currentQuestion: null },
+	questions: {
+		answered: 0,
+		list: []
+	},
+	navigation: { isLoading: false },
 	settings: {
 		difficulty: 'hard',
 		questionsAmount: 10,
@@ -17,13 +17,16 @@ const initialState = session ? JSON.parse(session) : {
 	}
 };
 
-const store = createStore(reducers, initialState);
+const store = createStore(combineReducers(reducers), initialState);
 
 store.subscribe(() => {
 	const sessionState = JSON.stringify(store.getState());
-	window.sessionStorage.setItem('quiz-state', sessionState);
-	// eslint-disable-next-line
-	console.log(JSON.parse(sessionState));
+	window.sessionStorage.setItem('trivia', sessionState);
 });
 
-export default store;
+export {
+	store,
+	initialState,
+	reducers,
+	actions
+};

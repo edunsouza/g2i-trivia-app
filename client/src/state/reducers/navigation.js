@@ -1,12 +1,7 @@
 export default (state = {}, { type, payload }) => {
 	switch (type) {
-		case 'NAVIGATION/INCREMENT_CURRENT_QUESTION':
-			// eslint-disable-next-line
-			console.log('payload:', payload);
-			return {
-				...state,
-				currentQuestion: payload
-			};
+		case 'NAVIGATION/SET_LOADING':
+			return { ...state, isLoading: payload };
 		default:
 			return state;
 	}

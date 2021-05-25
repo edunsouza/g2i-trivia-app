@@ -1,0 +1,32 @@
+$device-sm: 320px;
+$device-md: 750px;
+$device-lg: 999px;
+
+$main-color: #1b1b1b;
+$secondary-color: #686868;
+$base-color: #e0e0e0;
+
+body {
+    margin: 0;
+    font-family: sans-serif;
+    background-color: $base-color;
+}
+
+#root {
+    height: calc(100vh - 20px);
+    padding: 10px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
+
+.centered {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+}

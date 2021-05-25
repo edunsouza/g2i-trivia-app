@@ -1,0 +1,24 @@
+@import './App.scss';
+
+p {
+    margin: 0;
+    padding: 0;
+    color: $main-color;
+    font-size: 20px;
+    text-align: center;
+    word-break: break-word;
+}
+
+@media (min-width: $device-md) {
+
+    .p {
+        font-size: 26px;
+    }
+}
+
+@media (min-width: $device-lg) {
+
+    .p {
+        font-size: 32px;
+    }
+}

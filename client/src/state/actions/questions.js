@@ -1,14 +1,19 @@
-const answerQuestion = (answer, id) => ({
+const answer = (answer, id) => ({
 	type: 'QUESTIONS/ADD_ANSWER',
 	payload: { answer, id }
 });
 
-const fillQuestions = payload => ({
-	type: 'QUESTIONS/ADD_ANSWER',
-	payload
+const fill = list => ({
+	type: 'QUESTIONS/FILL',
+	payload: list
 });
 
+const reset = () => ({ type: 'QUESTIONS/RESET' });
+
 export default {
-	answerQuestion,
-	fillQuestions
+	answer,
+	fill,
+	reset
 };
+
+export { answer, fill, reset };
