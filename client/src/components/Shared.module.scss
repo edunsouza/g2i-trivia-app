@@ -14,7 +14,7 @@
 .subtitle {
     margin: 0;
     padding: 0;
-    color: $main-color;
+    color: $primary-color;
     font-size: 20px;
     text-align: center;
 }
@@ -34,9 +34,38 @@
     text-align: center;
     font-size: 20px;
     word-break: break-word;
-    color: $main-color;
+    color: $primary-color;
     margin: 0;
     padding: 0;
+}
+
+.list {
+    max-height: 70%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    padding: 0;
+    margin: 0px 20px 30px 10px;
+    list-style-type: none;
+
+    .decorator svg {
+        margin: 0 10px;
+        stroke: $secondary-color;
+        stroke-width: 40px;
+        fill: $secondary-color;
+        height: 16px;
+        width: 16px;
+    }
+
+    >li {
+        display: flex;
+        padding: 15px 0;
+        font-size: 18px;
+        color: $secondary-color;
+
+        >span:last-child {
+            word-wrap: break-word;
+        }
+    }
 }
 
 @media (min-width: $device-md) {
@@ -52,6 +81,10 @@
     .label {
         font-size: 26px;
     }
+
+    .list>li {
+        padding: 20px 50px;
+    }
 }
 
 @media (min-width: $device-lg) {
@@ -66,5 +99,13 @@
 
     .label {
         font-size: 32px;
+    }
+
+    .list {
+        margin-top: 20px;
+
+        .decorator {
+            margin-left: 80px;
+        }
     }
 }

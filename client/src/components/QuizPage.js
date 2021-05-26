@@ -70,8 +70,8 @@ export default function QuizPage() {
 			</DescriptiveFrame>
 
 			<Footer>
-				<Button onClick={() => onAnswer('True')}>True</Button>
-				<Button onClick={() => onAnswer('False')}>False</Button>
+				<Button variant="primary" onClick={() => onAnswer('True')}>True</Button>
+				<Button variant="primary" onClick={() => onAnswer('False')}>False</Button>
 			</Footer>
 		</>
 	);
