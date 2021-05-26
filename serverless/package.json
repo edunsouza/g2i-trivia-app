@@ -1,0 +1,11 @@
+{
+	"name": "g2i-trivia-serverless",
+	"version": "1.0.0",
+	"description": "gt2-trivia-app hosted on AWS by deta.sh",
+	"main": "index.js",
+	"author": "Eduardo Nascimento Souza",
+	"license": "ISC",
+	"dependencies": {
+		"express": "^4.17.1"
+	}
+}

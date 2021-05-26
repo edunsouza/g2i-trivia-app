@@ -4,6 +4,11 @@ client/node_modules
 # production
 client/build
 
+# deta
+serverless/node_modules
+serverless/build
+serverless/public
+
 # misc
 .vscode/
 .DS_Store

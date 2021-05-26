@@ -1,0 +1,1 @@
+{"id":"400c70ab-ef83-435f-b3a0-0e1193956f48","space":1397,"runtime":"nodejs12.x","name":"serverless","path":"gqzr1j","project":"b08y8948","account":"144798365827","region":"sa-east-1","deps":["express@^4.17.1"],"envs":null,"public":true,"log_level":"debug","cron":"","reload_deps":false}
