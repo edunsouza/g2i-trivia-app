@@ -1,6 +1,19 @@
 {
-	"name": "client",
-	"version": "0.1.0",
+	"name": "g2i-trivia",
+	"version": "1.0.0",
+	"description": "g2i Trivia Game App",
+	"author": "Eduardo Nascimento Souza",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/edunsouza/g2i-trivia-app.git"
+	},
+	"keywords": [
+		"g2i",
+		"trivia",
+		"trivia-app",
+		"trivia-game",
+		"questions-game"
+	],
 	"dependencies": {
 		"@testing-library/jest-dom": "^5.12.0",
 		"@testing-library/react": "^11.2.7",
