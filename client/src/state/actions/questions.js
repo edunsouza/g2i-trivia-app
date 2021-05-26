@@ -1,5 +1,5 @@
 const answer = (answer, id) => ({
-	type: 'QUESTIONS/ADD_ANSWER',
+	type: 'QUESTIONS/ANSWER',
 	payload: { answer, id }
 });
 

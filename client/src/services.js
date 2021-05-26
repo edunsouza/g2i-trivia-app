@@ -12,7 +12,8 @@ export async function fetchQuestions({ amount, difficulty, type }) {
 	try {
 		const params = { amount, difficulty, type };
 		const { data } = await axios.get(REACT_APP_TRIVIA_ENDPOINT, { params });
-		return data.results.map(q => ({
+		return data.results.map((q, i) => ({
+			id: i,
 			category: q.category,
 			question: decodeHtmlSpecialChars(q.question),
 			correctAnswer: q.correct_answer,
