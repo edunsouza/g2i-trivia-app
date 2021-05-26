@@ -6,7 +6,7 @@ import { reset as resetQuestions } from '../state/actions/questions';
 
 import Header from './Header';
 import Button from './Button';
-import ActionFooter from './ActionFooter';
+import Footer from './Footer';
 
 export default function ResultsPage() {
 	const history = useHistory();
@@ -21,9 +21,9 @@ export default function ResultsPage() {
 		<>
 			<Header title="You scored" subtitle="3 / 10" />
 			{/* <TriviaResults /> */}
-			<ActionFooter>
+			<Footer>
 				<Button variant="secondary" onClick={playAgain}>Play again?</Button>
-			</ActionFooter>
+			</Footer>
 		</>
 	);
 }

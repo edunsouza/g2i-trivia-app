@@ -5,7 +5,7 @@ import ResultsPage from './ResultsPage';
 import QuizPage from './QuizPage';
 import HomePage from './HomePage';
 
-import './App.scss';
+import './Global.scss';
 
 export default function App() {
 	return (

@@ -1,11 +1,11 @@
 import React from 'react';
 
-import styles from './Label.module.scss';
+import styles from './Shared.module.scss';
 
-export default function Label({ children }) {
+export default function Label({ children, isLoading }) {
 	return (
-		<p className={styles.p}>
-			{children}
+		<p className={styles.label}>
+			{isLoading ? 'Loading...' : children}
 		</p>
 	);
 }

@@ -9,15 +9,14 @@ import { answer as answerQuestion, fill as fillQuestions } from '../state/action
 import Header from './Header';
 import Button from './Button';
 import Label from './Label';
-import ActionFooter from './ActionFooter';
+import DescriptiveFrame from './DescriptiveFrame';
+import Footer from './Footer';
 
 export default function QuizPage() {
-	const [hasError, setError] = useState(false);
-	const { questions, navigation, settings } = useSelector(store => store);
-	const dispatch = useDispatch();
 	const history = useHistory();
-
-	const currentQuestion = questions.list[questions.answered] || {};
+	const dispatch = useDispatch();
+	const { questions, navigation, settings } = useSelector(store => store);
+	const [hasError, setError] = useState(false);
 
 	const onAnswer = answer => {
 		if (navigation.isLoading || hasError) {
@@ -32,12 +31,15 @@ export default function QuizPage() {
 			const { difficulty, questionsAmount: amount, questionsType: type } = settings;
 			const questions = await fetchQuestions({ difficulty, amount, type });
 			dispatch(fillQuestions(questions));
+			setError(false);
 		} catch (error) {
 			setError(true);
 		} finally {
 			dispatch(setLoading(false));
 		}
 	};
+
+	useEffect(() => document.title = 'Quiz', []);
 
 	useEffect(() => {
 		if (questions.answered > 0 && questions.answered >= questions.list.length) {
@@ -51,20 +53,26 @@ export default function QuizPage() {
 		}
 	}, [questions.list]);
 
-	useEffect(() => document.title = 'Quiz', []);
+	const currentQuestion = questions.list[questions.answered] || {};
+	const counter = {
+		answered: (questions.answered || 0) + 1,
+		total: questions.list.length
+	};
 
 	return (
 		<>
-			<Header title="Quiz!" />
-			{
-				hasError
-					? <Label>Unable to fetch questions. Please, try again later.</Label>
-					: <Label>{navigation.isLoading ? 'Loading...' : currentQuestion.question}</Label>
-			}
-			<ActionFooter>
+			<Header title={currentQuestion.category || 'Quiz time!'} />
+
+			<DescriptiveFrame description={`${counter.answered} of ${counter.total}`}>
+				<Label isLoading={navigation.isLoading} variant="bordered">
+					{hasError ? 'Unable to fetch questions. Please, try again.' : currentQuestion.question}
+				</Label>
+			</DescriptiveFrame>
+
+			<Footer>
 				<Button onClick={() => onAnswer('True')}>True</Button>
 				<Button onClick={() => onAnswer('False')}>False</Button>
-			</ActionFooter>
+			</Footer>
 		</>
 	);
 }

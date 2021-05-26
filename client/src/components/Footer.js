@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function ActionFooter({ children }) {
+export default function Footer({ children }) {
 	return (
 		<footer className="centered">
 			{children}
